@@ -13,6 +13,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'plasticboy/vim-markdown'
 call plug#end()
 
 """" Easy Motion 
@@ -29,7 +30,7 @@ set clipboard=unnamed
 
 """ Mappings - Reload
 :map <Leader>r :source ~/.vimrc<CR> :echom "Reloaded source file"<CR>
-:map <Leader>R :source ~/.vimrc<CR> :PlugInstall<CR> :q<CR> :echom "Reloaded source and plugins"<CR>
+:map <Leader>R :source ~/.vimrc<CR> :PlugInstall<CR> 
 
 """ Mappings - Split panes
 :map <Leader><c-h> :vnew<CR>

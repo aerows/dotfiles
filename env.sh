@@ -6,6 +6,7 @@
 # PATH
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export EDITOR='vim'
+set editing-mode vi
 # export PYTHONPATH=$PYTHONPATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -30,8 +31,9 @@ function f() { find . -iname "*$1*" ${@:2} }
 function r() { grep "$1" ${@:2} -R . }
 
 # Use sublimetext for editing config files
-alias zshconfig="vim ~/.zshrc"
-alias envconfig="vim ~/.env.sh"
+alias zshconfig="$EDITOR ~/.zshrc"
+alias envconfig="$EDITOR ~/.env.sh"
+alias zs="source ~/.zshrc && echo 'Reloaded source ~/.zshrc'"
 
 alias nb="jupyter notebook"
 alias myip="curl -s ipecho.net/plain; echo"
