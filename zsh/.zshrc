@@ -2,15 +2,12 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/danielhallin/.oh-my-zsh
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-
-POWERLEVEL9K_MODE='awesome-fontconfig'
-# POWERLEVEL9K_MODE='awesome-patched'
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="spaceship"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -57,10 +54,10 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 
 source $ZSH/oh-my-zsh.sh
 
-plugins=(extract git colored-man vim tmux colorize github jira vagrant virtualenv pip python brew osx zsh-syntax-highlighting)
+plugins=(extract git colored-man vim tmux github pip python zsh-syntax-highlighting)
 
 # Add env.sh
-source ~/.env.sh
+# source ~/.env.sh
 
 
 # User configuration
@@ -92,5 +89,3 @@ source ~/.env.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-
-. /Users/danielhallin/Develop/DL/torch/install/bin/torch-activate
