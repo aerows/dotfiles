@@ -1,13 +1,18 @@
+# export TERM="xterm-256color" 
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="spaceship"
+
+POWERLEVEL9K_MODE='awesome-fontconfig'
+# POWERLEVEL9K_MODE='awesome-patched'
+ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -54,10 +59,11 @@ ZSH_THEME="spaceship"
 
 source $ZSH/oh-my-zsh.sh
 
-plugins=(extract git colored-man vim tmux github pip python zsh-syntax-highlighting)
+# plugins=(zsh-completions zsh-autosuggestions)
+autoload -U compinit && compinit
 
 # Add env.sh
-# source ~/.env.sh
+source ~/.env.sh
 
 
 # User configuration
@@ -88,4 +94,4 @@ plugins=(extract git colored-man vim tmux github pip python zsh-syntax-highlight
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
+source ~/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
