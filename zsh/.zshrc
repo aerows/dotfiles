@@ -70,10 +70,6 @@ source $ZSH/oh-my-zsh.sh
 # plugins=(zsh-completions zsh-autosuggestions)
 autoload -U compinit && compinit
 
-# Add env.sh
-source ~/.env.sh
-
-
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
