@@ -9,10 +9,18 @@ export ZSH=$HOME/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+ZSH_THEME="spaceship"
 
-POWERLEVEL9K_MODE='awesome-fontconfig'
-# POWERLEVEL9K_MODE='awesome-patched'
-ZSH_THEME="powerlevel9k/powerlevel9k"
+# Editor
+export VISUAL=vim
+export EDITOR="$VISUAL"
+set editing-mode vi
+
+# For editing config files
+alias zshconfig="$EDITOR ~/.zshrc"
+alias envconfig="$EDITOR ~/.env.sh"
+alias zs="source ~/.zshrc && echo 'Reloaded source ~/.zshrc'"
+
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -94,4 +102,4 @@ source ~/.env.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source ~/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
