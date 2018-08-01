@@ -18,22 +18,19 @@ set editing-mode vi
 
 # For editing config files
 alias zshconfig="$EDITOR ~/.zshrc"
-alias envconfig="$EDITOR ~/.env.sh"
+alias envconfig="$EDITOR ~/.zshenv"
 alias zs="source ~/.zshrc && echo 'Reloaded source ~/.zshrc'"
 
+plugins=(
+git
+git-flow
+jira
+pip
+py-env
+tmux
+vi-mode
+)
 
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
