@@ -1,3 +1,7 @@
+# See https://github.com/Microsoft/BashOnWindows/issues/1887
+# TODO: Move this to .zshenv
+unsetopt BG_NICE
+
 # export TERM="xterm-256color" 
 
 # If you come from bash you might have to change your $PATH.
@@ -9,7 +13,6 @@ export ZSH=$HOME/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="spaceship"
 
 # Editor
 export VISUAL=vim
@@ -20,6 +23,12 @@ set editing-mode vi
 alias zshconfig="$EDITOR ~/.zshrc"
 alias envconfig="$EDITOR ~/.env.sh"
 alias zs="source ~/.zshrc && echo 'Reloaded source ~/.zshrc'"
+
+source ~/.zplug/init.zsh
+
+zplug denysdovhan/spaceship-zsh-theme, use:spaceship.zsh, from:github, as:theme
+
+zplug load --verbose
 
 
 # Uncomment the following line to use case-sensitive completion.
