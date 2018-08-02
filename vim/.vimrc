@@ -6,8 +6,9 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-call plug#begin('~/.vim/plugged')
+call plug#begin()
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'easymotion/vim-easymotion' 
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
@@ -39,6 +40,9 @@ map <Leader> <Plug>(easymotion-prefix)
 let g:EasyMotion_smartcase = 1
 
 """ Vim-Fugetive
+
+""" Airline theme
+let g:airline_theme='luna'
 
 """ NERDTree
 map <Leader>m :NERDTreeToggle<CR>
