@@ -5,3 +5,6 @@ export DISPLAY=localhost:0.0
 
 # Set browser
 export BROWSER="/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe"
+
+# Docker
+export DOCKER_HOST=tcp://0.0.0.0:2375
