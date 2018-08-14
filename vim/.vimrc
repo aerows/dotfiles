@@ -42,6 +42,10 @@ map <Leader> <Plug>(easymotion-prefix)
 let g:EasyMotion_smartcase = 1
 
 """ Vim-Fugetive
+nnoremap <expr> <Leader>gs bufwinnr(".git/index") > 0 ? ':bd .git/index<CR>' : ':Gstatus<CR>'
+nnoremap <expr> <Leader>gd &diff ? '<c-w>j <c-w>h :q!<CR>' : ':Gvdiff<CR><c-w><c-p>'
+nnoremap <Leader>gc :Gcommit 
+nnoremap <Leader>ga :Git add %:p<CR><CR>
 
 """ Airline theme
 let g:airline_theme='luna'
