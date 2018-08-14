@@ -22,6 +22,7 @@ Plug 'vim-scripts/indentpython.vim'
 Plug 'valloric/ycmd'
 Plug 'valloric/YouCompleteMe'
 Plug 'tpope/vim-dispatch'
+Plug 'chikamichi/mediawiki.vim'
 call plug#end()
 
 """ General Settings
@@ -91,3 +92,8 @@ endif
 " URL encode/decode selection
 vnoremap <leader>en :!python -c 'import sys,urllib;print urllib.quote(sys.stdin.read().strip())'<cr>
 vnoremap <leader>de :!python -c 'import sys,urllib;print urllib.unquote(sys.stdin.read().strip())'<cr>
+
+" Source Local Vim Env
+:if !empty(glob("~/.vimenv"))
+:   so ~/.vimenv
+:endif
