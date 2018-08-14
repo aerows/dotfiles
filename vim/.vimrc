@@ -22,6 +22,7 @@ Plug 'vim-scripts/indentpython.vim'
 Plug 'valloric/ycmd'
 Plug 'valloric/YouCompleteMe'
 Plug 'tpope/vim-dispatch'
+Plug 'chikamichi/mediawiki.vim'
 call plug#end()
 
 """ General Settings
