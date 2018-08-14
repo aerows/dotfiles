@@ -21,6 +21,7 @@ Plug 'tmhedberg/SimpylFold'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'valloric/ycmd'
 Plug 'valloric/YouCompleteMe'
+Plug 'tpope/vim-dispatch'
 call plug#end()
 
 """ General Settings
