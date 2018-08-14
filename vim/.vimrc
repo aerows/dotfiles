@@ -23,6 +23,7 @@ Plug 'valloric/ycmd'
 Plug 'valloric/YouCompleteMe'
 Plug 'tpope/vim-dispatch'
 Plug 'chikamichi/mediawiki.vim'
+Plug 'aquach/vim-mediawiki-editor'
 call plug#end()
 
 """ General Settings
