@@ -60,16 +60,6 @@ map <Leader>m :NERDTreeToggle<CR>
 """ NERDTree
 map <Leader>m :NERDTreeToggle<CR>
 
-""" Mappings - Reload
-:map <Leader>r :source ~/.vimrc<CR> :echom "Reloaded source file"<CR>
-:map <Leader>R :source ~/.vimrc<CR> :PlugInstall<CR> 
-
-""" Mappings - Split panes
-:map <Leader><c-h> :vnew<CR>
-:map <Leader><c-j> :below new<CR>
-:map <Leader><c-k> :new<CR>
-:map <Leader><c-l> :below vnew<CR>
-
 """ Python
 """ Code folding
 au BufNewFile,BufRead *.js, *.html, *.css
