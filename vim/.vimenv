@@ -1,0 +1,4 @@
+let g:mediawiki_editor_url = "http://glasgow/mediawiki/"
+let g:mediawiki_editor_path = "/"
+let g:mediawiki_editor_username = "Daniel"
+let g:mediawiki_editor_password = "0nede6Bz1KQhiMDSRG1h"
