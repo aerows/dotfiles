@@ -50,7 +50,7 @@ nnoremap <Leader>gc :Gcommit
 nnoremap <Leader>ga :Git add %:p<CR><CR>
 
 """ Airline theme
-let g:airline_theme='luna'
+let g:airline_theme='bubblegum'
 
 """ NERDTree
 map <Leader>m :NERDTreeToggle<CR>
