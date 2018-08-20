@@ -52,6 +52,12 @@ nnoremap <Leader>ga :Git add %:p<CR><CR>
 
 """ Airline theme
 let g:airline_theme='bubblegum'
+:set background=dark
+
+""" Highlighting
+:syntax on 
+:hi Visual term=reverse cterm=reverse ctermbg=Blue
+
 
 """ NERDTree
 map <Leader>m :NERDTreeToggle<CR>
