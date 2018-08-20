@@ -7,6 +7,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin()
+Plug 'skammer/vim-css-color'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'easymotion/vim-easymotion' 
@@ -50,7 +51,13 @@ nnoremap <Leader>gc :Gcommit
 nnoremap <Leader>ga :Git add %:p<CR><CR>
 
 """ Airline theme
-let g:airline_theme='luna'
+let g:airline_theme='bubblegum'
+:set background=dark
+
+""" Highlighting
+:syntax on 
+:hi Visual term=reverse cterm=reverse ctermbg=Blue
+
 
 """ NERDTree
 map <Leader>m :NERDTreeToggle<CR>
