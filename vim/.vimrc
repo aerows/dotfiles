@@ -25,6 +25,10 @@ Plug 'valloric/YouCompleteMe'
 Plug 'tpope/vim-dispatch'
 Plug 'chikamichi/mediawiki.vim'
 Plug 'aquach/vim-mediawiki-editor'
+Plug 'thanethomson/vim-jenkinsfile'
+Plug 'szymonmaszke/vimpyter'
+Plug 'junegunn/goyo.vim'
+Plug 'terryma/vim-multiple-cursors'
 call plug#end()
 
 """ General Settings
@@ -35,6 +39,9 @@ set shiftwidth=2
 set expandtab
 set clipboard=unnamed
 set encoding=utf-8
+
+""" Hides standard input status
+set noshowmode
 
 """ Cursor
 autocmd VimEnter * silent exec "! echo -ne '\e[1 q'"
@@ -74,12 +81,22 @@ map <Leader>m :NERDTreeToggle<CR>
 """ NERDTree
 map <Leader>m :NERDTreeToggle<CR>
 
+""" Goyo
+:map <Leader>z :Goyo<CR>
+
 """ Python
 """ Code folding
 au BufNewFile,BufRead *.js, *.html, *.css
     \ set tabstop=2
     \ set softtabstop=2
     \ set shiftwidth=2
+
+""" Ipython-Bindings
+autocmd Filetype ipynb nmap <silent><Leader>b :VimpyterInsertPythonBlock<CR>
+autocmd Filetype ipynb nmap <silent><Leader>j :VimpyterStartJupyter<CR>
+autocmd Filetype ipynb nmap <silent><Leader>n :VimpyterStartNteract<CR>
+
+nmap <Leader><c-r> :!clear; python3 %<cr>
 
 """ Flag whitespace
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
