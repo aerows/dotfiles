@@ -7,28 +7,31 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin()
+Plug 'airblade/vim-gitgutter'
+Plug 'aquach/vim-mediawiki-editor'
+Plug 'chikamichi/mediawiki.vim'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'easymotion/vim-easymotion'
+Plug 'geoffharcourt/one-dark.vim'
+Plug 'junegunn/goyo.vim'
+Plug 'plasticboy/vim-markdown'
+Plug 'ryanoasis/vim-devicons'
+Plug 'scrooloose/nerdtree'
+Plug 'sheerun/vim-polyglot'
 Plug 'skammer/vim-css-color'
+Plug 'speedyleion/vim-jira'
+Plug 'szymonmaszke/vimpyter'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'thanethomson/vim-jenkinsfile'
+Plug 'tmhedberg/SimpylFold'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'valloric/YouCompleteMe'
+Plug 'valloric/ycmd'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'easymotion/vim-easymotion' 
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
-Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-surround'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'plasticboy/vim-markdown'
-Plug 'speedyleion/vim-jira'
-Plug 'tmhedberg/SimpylFold'
 Plug 'vim-scripts/indentpython.vim'
-Plug 'valloric/ycmd'
-Plug 'valloric/YouCompleteMe'
-Plug 'tpope/vim-dispatch'
-Plug 'chikamichi/mediawiki.vim'
-Plug 'aquach/vim-mediawiki-editor'
-Plug 'thanethomson/vim-jenkinsfile'
-Plug 'szymonmaszke/vimpyter'
-Plug 'junegunn/goyo.vim'
-Plug 'terryma/vim-multiple-cursors'
 call plug#end()
 
 """ General Settings
@@ -40,21 +43,25 @@ set expandtab
 set clipboard=unnamed
 set encoding=utf-8
 
-""" Hides standard input status
-set noshowmode
+""" Theme
+syntax on
+colorscheme onedark
+let g:lightline = {
+  \ 'colorscheme': 'onedark',
+  \ }
 
 """ Cursor
 autocmd VimEnter * silent exec "! echo -ne '\e[1 q'"
-autocmd VimLeave * silent exec "! echo -ne '\e[5 q'" 
+autocmd VimLeave * silent exec "! echo -ne '\e[5 q'"
 
-"""" Easy Motion 
+"""" Easy Motion
 map <Leader> <Plug>(easymotion-prefix)
 let g:EasyMotion_smartcase = 1
 
 """ Vim-Fugetive
 nnoremap <expr> <Leader>gs bufwinnr(".git/index") > 0 ? ':bd .git/index<CR>' : ':Gstatus<CR>'
 nnoremap <expr> <Leader>gd &diff ? '<c-w>j <c-w>h :q!<CR>' : ':Gvdiff<CR><c-w><c-p>'
-nnoremap <Leader>gc :Gcommit 
+nnoremap <Leader>gc :Gcommit
 nnoremap <Leader>ga :Git add %:p<CR><CR>
 
 """ Airline theme
@@ -62,7 +69,7 @@ let g:airline_theme='bubblegum'
 :set background=dark
 
 """ Highlighting
-:syntax on 
+:syntax on
 :hi Visual term=reverse cterm=reverse ctermbg=Blue
 
 
@@ -71,7 +78,7 @@ map <Leader>m :NERDTreeToggle<CR>
 
 """ Mappings - Reload
 :map <Leader>r :source ~/.vimrc<CR> :echom "Reloaded source file"<CR>
-:map <Leader>R :source ~/.vimrc<CR> :PlugInstall<CR> 
+:map <Leader>R :source ~/.vimrc<CR> :PlugInstall<CR>
 
 """ Mappings - Split panes
 :map <Leader><c-h> :vnew<CR>
