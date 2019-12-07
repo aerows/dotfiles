@@ -8,15 +8,15 @@ export BROWSER="/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe"
 
 export LD_LIBRARY_PATH="/home/daniel/lib/TensorRT-4.0.1.6/lib:${LD_LIBRARY_PATH}"
 
+export PATH="/home/daniel/.local/bin/:$PATH"
+export PATH="/home/daniel/scripts/:$PATH"
+
 # Docker
 export DOCKER_HOST=tcp://0.0.0.0:2375
 
 # Aliases
 alias deeplearning1="ssh visionists@10.20.10.90"
 alias deeplearning2="ssh visionists@10.20.10.91"
-
-alias a="source venv/bin/activate"
-alias d="deactivate"
 
 alias start='cmd.exe /c start'
 
@@ -25,3 +25,10 @@ alias nvidia-smic="watch -n 1 nvidia-smi.exe"
 alias py="py.exe"
 alias svn="svn.exe"
 
+# Enable tab completion of flags
+source $(dirname $(gem which colorls))/tab_complete.sh
+alias ols=/bin/ls
+alias ls="colorls"
+
+
+export DISABLE_AUTO_TITLE='true'
