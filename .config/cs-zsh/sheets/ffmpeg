@@ -1,0 +1,44 @@
+# Some guidance, but not absolutely necessary:
+#
+#   * Keep columns 8 tabs apart.
+#   * Provide a space after each section.
+#   * Underlines are the width of the word.
+#   * Try to keep descriptions within a single line.
+#
+# The cheatsheet will be displayed exactly as you see it here - as a flat text file.
+# Comments are ignored, but only if they occupy the entire line on their own -
+#  trailing comments are not ignored.
+#
+CONVERSION
+----------------
+Convert .jpegs to .avi          : ffmpeg -i im%3d.jpg video.avi
+Convert .avi to .jpeg           : ffmpeg -i video.avi -f image2 im%03d.jpg
+Convert mjpeg.avi to .jpegs     : ffmpeg -i video.avi -c:v copy -bsf:v mjpeg2jpeg im%d.jpg
+
+Check if video is mjpeg         : ffprobe -v error -select_streams v:0 -show_entries stream=codec_name -of default=nw=1 input.avi
+
+
+FLAGS
+-----
+Quality 2-31, lower is better   : -qscale:v $value
+Set output resolution           : ffmpeg -i input.avi -s 720x480 -c:a copy output.avi
+Set output resolution same a/r  : ffmpeg -i input.avi -s 720:-1 -c:a copy output.avi
+Change frame-rate               : ffmpeg -i input.avi -filter:v fps=fps=30 output.avi
+
+
+WATERMARK
+---------
+Put watermark on video          : ffmpeg -i $file -i image.png -filter_complex "overlay=15:H-h-50" -codec:a copy "output.avi"
+  Center                        : "overlay=(W-w)/2:(H-h)/2"
+  Top-left                      : "overlay=5:5"            
+  Top-right                     : "overlay=W-w-5:5"        
+  Bottom-left                   : "overlay=5:H-h-5"        
+  Bottom-right                  : "overlay=W-w-5:H-h-5"    
+
+
+
+# E.G. NAVIGATION
+# ---------------
+# <description>                   : <key bind>
+# <description>                   : <command>
+#

@@ -1,0 +1,61 @@
+# Some guidance, but not absolutely necessary:
+#
+#   * Keep columns 8 tabs apart.
+#   * Provide a space after each section.
+#   * Underlines are the width of the word.
+#   * Try to keep descriptions within a single line.
+#
+# The cheatsheet will be displayed exactly as you see it here - as a flat text file.
+# Comments are ignored, but only if they occupy the entire line on their own -
+#  trailing comments are not ignored.
+#
+FOR-LOOPS
+---------
+Basic                           : for arg in arg1, arg2; do ...; done
+Glob                            : for file in ./*.avi
+Ranges (start, end, step)       : for idx in {0..10..2}    | 0 2 4 6 8 10
+Leading zeros                   : for idx in {00..03}      | 00 01 02 03
+Concat idx                      : for user in user{00..03} | user00 user01 user02 user03
+
+
+PATH MANIPULATION
+---------------
+Get basename                    : filename=$(basename -- "$fullfile")
+Get extension                   : extension="${filename##*.}"
+Get stem                        : filename="${filename%.*}"
+
+ARGUMENTS
+---------
+Arg count                       : $#
+Positional                      : $0 $1 $2
+All args                        : $@
+Shift args down by one          : shift 
+
+FILE SYSTEM
+-----------
+Check if path exists.           : test -e PATH or [ -e PATH ] or [[ -e PATH ]] 
+Check if dir exists.            : test -d PATH or [ -d PATH ] or [[ -d PATH ]] 
+Check if file does not exist.   : [ ! -f PATH ] or [[ ! -f PATH ]]
+
+COMPARISIONS
+-------------
+Equal to `-eq`                  : if [ $1 -eq 1 ]
+Not equal to `-ne`              : if [ $1 -ne 1 ]
+Less than `-lt`                 : if [ $1 -lt 1 ]
+Less than or equal to `-le`     : if [ $1 -le 1 ]
+Greater than `-gt`              : if [ $1 -gt 1 ]
+Greater than or equal to `-ge`  : if [ $1 -ge 1 ]
+
+
+GETOPTS
+-------
+Standard template               : while getopts 'h' flag; do 
+                                :   case "${flag}" in        
+                                :     h) print_usage         
+                                :        exit 0 ;;           
+                                :     *) print_usage         
+                                :        exit 2 ;;           
+                                :   esac                     
+                                : done                       
+                                :                            
+                                : shift $((OPTIND-1))        
