@@ -3,10 +3,17 @@
 # To access windows clipboard from WSL via XLaunch - https://github.com/Microsoft/WSL/issues/892
 export DISPLAY=localhost:0.0
 
+# Pyenv
+export PATH="/home/daniel/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+# Rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init - --no-rehash)"
+
 # Set browser
 export BROWSER="/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe"
-
-export LD_LIBRARY_PATH="/home/daniel/lib/TensorRT-4.0.1.6/lib:${LD_LIBRARY_PATH}"
 
 export PATH="/home/daniel/.local/bin/:$PATH"
 export PATH="/home/daniel/scripts/:$PATH"
@@ -22,13 +29,15 @@ alias start='cmd.exe /c start'
 
 alias nvidia-smi="nvidia-smi.exe"
 alias nvidia-smic="watch -n 1 nvidia-smi.exe"
-alias py="py.exe"
-alias svn="svn.exe"
+
+alias wgst="watch -n1 git status ."
 
 # Enable tab completion of flags
-source $(dirname $(gem which colorls))/tab_complete.sh
-alias ols=/bin/ls
-alias ls="colorls"
+# source $(dirname $(gem which colorls))/tab_complete.sh
+
+alias ,m="$EDITOR /mnt/c/Users/$USER/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json"
+
+alias git-bash="/mnt/c/Program\ Files/Git/usr/bin/bash.exe"
 
 
 export DISABLE_AUTO_TITLE='true'
